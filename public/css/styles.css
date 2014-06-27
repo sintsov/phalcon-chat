@@ -1,0 +1,64 @@
+html, body, .row, .leftPanel {height: 99%}
+#chat{background-color: #ffffff; font-family: 'Open Sans','HelveticaNeue-Light',sans-serif; font-size: 14px; line-height: 140%; color: black; height:100%}
+.panel-default{height:100%}
+.trpHeaderWrapper{width:50%; padding-bottom: 10px; position: fixed; box-sizing: border-box; top: 0; background-color: rgba(255,255,255,0.97); border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1}
+.trpHeaderWrapper .trpHeaderContainer {display: inline-block; padding-left: 46px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box}
+.trpHeaderWrapper h1 {line-height: 44px; font-family: 'Open Sans'; font-weight: 300; font-size: 22px; color: #333; display: inline; vertical-align: middle}
+.gtrNameTopic {width:100%}
+.trpHeaderWrapper .trpTroupeFavourite {float: left; display: inline-block; margin-left: 4px; margin-right: 18px; margin-top: 12px;}
+.trpHeaderWrapper #trpTopic { font-family: 'Open Sans','HelveticaNeue-Light',sans-serif; font-size: 13px; color: #777; min-height: 1em; margin: -5px 0 0 0; -o-user-select: text; -webkit-user-select: text; -khtml-user-select: text; -moz-user-select: text; -ms-user-select: text;}
+.trpHeaderWrapper .gtrNameTopic {margin-right: 60px; margin-left: 50px;}
+#chat .glyphicon {font-size: 24px;}
+#content-frame {padding-top: 80px;}
+#auth-head{padding-bottom: 10px;}
+.tab-content{padding-top: 10px;}
+.alert-danger{font-size: 12px;}
+.avatar {position:relative; background-size: 32px 32px; border-radius: 50%; display: block; margin: -1px; height: 32px; width: 32px; margin-top:5px;}
+.trpChatInputAvatar {float: left;}
+.trpChatInputArea{
+    position: absolute;
+    bottom: 0;
+    min-height: 74px;
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    bottom: 0px;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+    transition: 500ms;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    padding-top: 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    right: 288px;
+    left: 250px;
+}
+.trpLeftMenuProfileName{display: inline-block;margin-top: 8px;}
+.trpDisplayPicture{float:left; margin-right: 12px;}
+.trpChatDetails {color: #999; font-size: 12px;}
+.trpChatFrom{float:left;}
+
+.trpLeftMenuProfileButton {position: absolute; bottom: 20px;}
+.trpToolbarList ul {list-style: none; margin: 0; padding: 0;}
+ul.roster li {display: inline-block;}
+.trpToolbar{background-color: #f4f5f6; height:100%; margin-left:15px;}
+.leftPanel{position: fixed; width: 250px; display: inline-block; left: 0; top: 0;}
+#chat{position: fixed; height: 100%; top: 0; left: 250px; right: 0; margin-right: 288px;}
+.trpToolbar{width: 288px;position: fixed; display: inline-block; right: 0; top: 0; bottom: 0;}
+.trpChatItem{padding: 8px 30px 8px 44px;}
+.trpChatInputContainer{padding: 0 44px;}
+.trpToolbarListContent {padding-left: 10px;}
+.trpToolbarHeader {padding-left: 14px;}
+.signout-button{width: 215px;}
+.trpChatBox{margin-left: 40px;padding: 0 12px;}
+
+.trpDisplayPicture.offline .trpStatus {background-color: #fcb316;}
+.trpDisplayPicture.online .trpStatus {background-color: #06ff00;}
+.trpStatus {position: absolute; top: 5px; left: -6px; border-radius: 5em; border: 2px solid white; width: 8px; height: 8px; display: block;}
+.trpChatContainer { display: inline-block; width: 100%; overflow: auto; position: absolute; bottom:78px; top:58px;} /*height:100%*/

@@ -1,0 +1,11 @@
+RedirectMatch 204 /favicon.ico
+
+Options +Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
+</IfModule>
