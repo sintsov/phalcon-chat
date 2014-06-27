@@ -13,10 +13,9 @@ use Phalcon\Mvc\User\Component,
 
 class Common extends Component {
 
-    public function getMessages($time = false){
-        if ($time){
-            //every 10 min
-            Messages::find('createdAt > ' . time()-10);
+    public function getMessages($messageId){
+        if ($messageId){
+            return Messages::find('id > ' . (int) $messageId);
         } else {
             return Messages::find();
         }

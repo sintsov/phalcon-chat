@@ -62,17 +62,22 @@ class MessageController extends ControllerBase {
     public function getMessagesAction(){
         $this->view->disable();
         $response = new Response();
+        if ($this->request->isPost()) {
 
-        $messages = $this->messages->getMessages(true);
-        if ($messages){
-            // TODO: future need js templater and response json data
-            $html = $this->view->getRender('chat', 'messages', array('messages' => $messages), function ($view) {
-                $view->setRenderLevel(View::LEVEL_LAYOUT);
-            });
-            $response->setJsonContent(array('status' => 'success', 'html' => utf8_encode($html)));
-        } else {
-            // lets think may be new?
-           // $response->setJsonContent(array('status' => 'error', 'message' => 'Could not get the message'));
+            $id = $this->request->getPost('lastId');
+            if ($id){
+                $messages = $this->messages->getMessages($id);
+                if ($messages){
+                    // TODO: future need js templater and response json data
+                    $html = $this->view->getRender('chat', 'messages', array('messages' => $messages), function ($view) {
+                        $view->setRenderLevel(View::LEVEL_LAYOUT);
+                    });
+                    $response->setJsonContent(array('status' => 'success', 'html' => utf8_encode($html)));
+                }
+            } else {
+                // $response->setJsonContent(array('status' => 'error', 'message' => 'Could not get the message'));
+            }
+            return $response;
         }
     }
 

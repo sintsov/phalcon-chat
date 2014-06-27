@@ -34,19 +34,25 @@ var Chat = {
         return true;
     },
     getMessagesList: function(){
-        $.ajax({
-            url: "/message/getMessages",
-            type: "post",
-            dataType: "json",
-            success: function(data) {
-                if (data.status == 'success'){
-                    $('.trpChatContainer').append(data.html);
-                    $("#content-frame").scrollTop($("#content-frame")[0].scrollHeight);
-                } else {
-                    // need add handler errors
+        var id = $('#content-frame').find('.trpChatItemContainer:last').attr('data-msgId');
+        if (id > 0){
+            $.ajax({
+                url: "/message/getMessages",
+                type: "post",
+                data: {
+                    lastId: id
+                },
+                dataType: "json",
+                success: function(data) {
+                    if (data.status == 'success'){
+                        $('.trpChatContainer').append(data.html);
+                        $("#content-frame").scrollTop($("#content-frame")[0].scrollHeight);
+                    } else {
+                        // need add handler errors
+                    }
                 }
-            }
-        });
+            });
+        }
     },
     init: function(){
         $('#chat-input-textarea').keydown(function (e) {
@@ -57,7 +63,6 @@ var Chat = {
 
         // Get users messages every 10 seconds
         setInterval(Chat.getMessagesList, 10000);
-
     }
 };
 

@@ -1,4 +1,4 @@
-<div class="trpChatItemContainer read cantEdit isOld">
+<div class="trpChatItemContainer read cantEdit" data-msgId="{{ message.id }}">
     <div class="trpChatItem view">
         <div class="trpChatAvatar">
             <div class="trpDisplayPicture avatar" style="background-image: url('{{ message.users.getUserAvatar() }}')" data-original-title="{{ message.users.name }}"></div>
