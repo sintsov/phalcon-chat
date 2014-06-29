@@ -1,6 +1,6 @@
 <?php
 /**
- * Controller index
+ * Controller management users messages
  *
  * @author Sintsov Roman <romiras_spb@mail.ru>
  * @copyright Copyright (c) 2014, MainSource

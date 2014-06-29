@@ -13,7 +13,7 @@ use Phalcon\Mvc\User\Component,
 
 class Common extends Component {
 
-    public function getMessages($messageId){
+    public function getMessages($messageId = false){
         if ($messageId){
             return Messages::find('id > ' . (int) $messageId);
         } else {

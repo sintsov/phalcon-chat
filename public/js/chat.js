@@ -54,6 +54,20 @@ var Chat = {
             });
         }
     },
+    gatActualUsersList: function(){
+        $.ajax({
+            url: "/users/getActualUsers",
+            type: "post",
+            dataType: "json",
+            success: function(data) {
+                if (data.status == 'success'){
+                    $('#people-roster div').html(data.html);
+                } else {
+                    // need add handler errors
+                }
+            }
+        });
+    },
     init: function(){
         $('#chat-input-textarea').keydown(function (e) {
             if (e.ctrlKey && e.keyCode == 13) {
@@ -63,6 +77,8 @@ var Chat = {
 
         // Get users messages every 10 seconds
         setInterval(Chat.getMessagesList, 10000);
+        // Get actual users every 20 seconds
+        setInterval(Chat.gatActualUsersList, 20000);
     }
 };
 

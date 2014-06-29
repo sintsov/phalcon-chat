@@ -21,9 +21,10 @@ $(function(){
         $('.alert').remove();
         $(this).tab('show');
         window.location.hash = this.hash;
-    })
+    });
 
-    $('.trpDisplayPicture').tooltip({
+    $('body').tooltip({
+        selector: '.trpDisplayPicture',
         placement: 'left'
     });
 
