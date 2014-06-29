@@ -16,6 +16,9 @@
 
 {{ javascript_include("js/jquery-1.11.1.min.js") }}
 {{ javascript_include("js/bootstrap.min.js") }}
+{{ javascript_include("js/jquery.ui.widget.js") }}
+{{ javascript_include("js/jquery.iframe-transport.js") }}
+{{ javascript_include("js/jquery.fileupload.js") }}
 {{ javascript_include("js/utils.js") }}
 {{ javascript_include("js/chat.js") }}
 

@@ -44,7 +44,7 @@ var Chat = {
                 },
                 dataType: "json",
                 success: function(data) {
-                    if (data.status == 'success'){
+                    if (data.status == 'success' && data.html.length > 0){
                         $('.trpChatContainer').append(data.html);
                         $("#content-frame").scrollTop($("#content-frame")[0].scrollHeight);
                     } else {
@@ -79,6 +79,8 @@ var Chat = {
         setInterval(Chat.getMessagesList, 10000);
         // Get actual users every 20 seconds
         setInterval(Chat.gatActualUsersList, 20000);
+        // fixme: dirty hack
+        setTimeout('$("#content-frame").scrollTop($("#content-frame")[0].scrollHeight)', 100);
     }
 };
 

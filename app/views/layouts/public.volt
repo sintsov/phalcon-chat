@@ -15,6 +15,13 @@
                             </div>
                         </div>
                     </div>
+                    <div style="display:none" id="avatarLoad">
+                        <span class="btn btn-success fileinput-button">
+                              <i class="glyphicon glyphicon-plus"></i>
+                              <span>Load avatar...</span>
+                              <input id="fileupload" type="file" name="avatar" >
+                        </span>
+                    </div>
                     <div class="trpLeftMenuProfileButton">
                         <form action="/auth/singout/">
                             <input type="submit" class="form-control signout-button" value="SignOut"/>

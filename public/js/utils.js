@@ -30,4 +30,19 @@ $(function(){
 
     $("#content-frame").scrollTop($("#content-frame")[0].scrollHeight);
 
+    $('#left-menu-profile').click(function(){
+        $('#avatarLoad').toggle();
+    });
+
+    $('#fileupload').fileupload({
+        url: 'users/changeAvatar',
+        dataType: 'json',
+        done: function (e, data) {
+           var response = data.result;
+            if (response.status == 'success'){
+                $('.trpLeftMenuProfileHeader .avatar').css('background-image', 'url("' + response.img + '")');
+            }
+        }
+    });
+
 });

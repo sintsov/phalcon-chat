@@ -23,6 +23,7 @@ return new \Phalcon\Config(array(
         'formsDir' => APP_DIR . '/forms/',
         'viewsDir' => APP_DIR . '/views/',
         'libraryDir' => APP_DIR . '/libs/',
+        'uploadsDir' => APP_PATH . '/public/uploads/',
         'i18n' => APP_DIR . '/i18n/',
         'cacheDir' => APP_PATH . '/cache/',
         'voltCacheDir' => APP_PATH . '/cache/volt/',
