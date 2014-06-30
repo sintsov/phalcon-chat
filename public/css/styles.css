@@ -63,7 +63,7 @@ ul.roster li {display: inline-block;}
 .trpStatus {position: absolute; top: 5px; left: -6px; border-radius: 5em; border: 2px solid white; width: 8px; height: 8px; display: block;}
 .trpChatContainer { display: inline-block; width: 100%; overflow: auto; position: absolute; bottom:78px; top:58px;} /*height:100%*/
 
-.panel-body:hover{background-color: #28415b;border-color: #253c54;cursor: pointer;}
+#profileLeftPanel:hover{background-color: #28415b;border-color: #253c54;cursor: pointer;}
 #avatarLoad{padding-top: 20px;}
 .fileinput-button input {
 position: absolute;

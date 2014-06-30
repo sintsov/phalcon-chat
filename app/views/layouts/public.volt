@@ -7,7 +7,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Profile</h3>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" id="profileLeftPanel">
                     <div id="left-menu-profile" class="trpLeftMenuProfile"><div>
                             <div class="trpLeftMenuProfileHeader view">
                                 <div class="trpDisplayPicture avatar" style="background-image: url('{{ user.getUserAvatar() }}')"></div>

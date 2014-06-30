@@ -68,6 +68,9 @@ var Chat = {
             }
         });
     },
+    loadMessages: function(){
+
+    },
     init: function(){
         $('#chat-input-textarea').keydown(function (e) {
             if (e.ctrlKey && e.keyCode == 13) {
@@ -81,6 +84,13 @@ var Chat = {
         setInterval(Chat.gatActualUsersList, 20000);
         // fixme: dirty hack
         setTimeout('$("#content-frame").scrollTop($("#content-frame")[0].scrollHeight)', 100);
+
+        $('#content-frame').scroll(function() {
+            var pos = $('#content-frame').scrollTop();
+            if(pos <=  0) {
+                Chat.loadMessages();
+            }
+        });
     }
 };
 
