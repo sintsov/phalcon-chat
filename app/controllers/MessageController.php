@@ -65,8 +65,9 @@ class MessageController extends ControllerBase {
         if ($this->request->isPost()) {
 
             $id = $this->request->getPost('lastId');
+            $isScroll = $this->request->getPost('scroll');
             if ($id){
-                $messages = $this->messages->getMessages($id);
+                $messages = $this->messages->getMessages($id, $isScroll);
                 if ($messages){
                     // TODO: future need js templater and response json data
                     $html = $this->view->getRender('chat', 'messages', array('messages' => $messages), function ($view) {

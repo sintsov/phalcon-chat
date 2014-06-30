@@ -45,7 +45,7 @@ var Chat = {
                 dataType: "json",
                 success: function(data) {
                     if (data.status == 'success' && data.html.length > 0){
-                        $('.trpChatContainer').append(data.html);
+                        $('.trpChatContainer').append(utf8_decode(data.html));
                         $("#content-frame").scrollTop($("#content-frame")[0].scrollHeight);
                     } else {
                         // need add handler errors
@@ -61,7 +61,7 @@ var Chat = {
             dataType: "json",
             success: function(data) {
                 if (data.status == 'success'){
-                    $('#people-roster div').html(data.html);
+                    $('#people-roster div').html(utf8_decode(data.html));
                 } else {
                     // need add handler errors
                 }
@@ -69,7 +69,30 @@ var Chat = {
         });
     },
     loadMessages: function(){
-
+        var $base = $('.trpChatContainer');
+        var $element = $('#content-frame').find('.trpChatItemContainer:first');
+        var id = $element.attr('data-msgId');
+        if (id > 1){
+            $element.prepend('<img style="padding-left:44px;" id="loading" src="/images/ajax-loader.gif"/>');
+            $.ajax({
+                url: "/message/getMessages",
+                type: "post",
+                data: {
+                    lastId: id,
+                    scroll: true
+                },
+                dataType: "json",
+                success: function(data) {
+                    if (data.status == 'success' && data.html.length > 0){
+                        $('#loading').remove();
+                        $base.prepend(utf8_decode(data.html));
+                        $("#content-frame").scrollTop($element.prev().offset().top);
+                    } else {
+                        // need add handler errors
+                    }
+                }
+            });
+        }
     },
     init: function(){
         $('#chat-input-textarea').keydown(function (e) {
