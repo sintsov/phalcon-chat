@@ -27,11 +27,7 @@ class Common extends Component {
         $offset = $count - $limit;
         if ($offset < 0) $offset = 0;
         if ($messageId){
-            return Messages::find(array(
-                "id > " . (int) $messageId,
-                "offset" => $offset,
-                "limit" => $limit
-            ));
+            return Messages::find("id > " . (int) $messageId);
         } else {
             return Messages::find(array(
                 "offset" => $offset,
