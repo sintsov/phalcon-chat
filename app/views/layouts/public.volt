@@ -34,7 +34,7 @@
                 <div class="panel-body">
                     <!-- Sign In|Join -->
                     <div id="auth-head">
-                        Welcome Phalcon-Chat project for Automated Intelligence Systems.
+                        Welcome Phalcon-Chat project for Phalcon Framework Demo.
                     </div>
                     <div id="auth-panel">
                         <ul class="nav nav-tabs">
@@ -92,7 +92,7 @@
                     </div>
                     <div class="gtrNameTopic">
                         <h1 id="name-label">phalcon-chat</h1>
-                        <p id="trpTopic">Chat test task Automated Intelligence Systems</p>
+                        <p id="trpTopic">Chat test Phalcon Framework</p>
                     </div>
                 </div>
             </div>
